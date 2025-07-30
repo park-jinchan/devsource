@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page12_text.html</title>
+        <style>
+            /* font 스타일 */
+            body {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: large; /* large. x-large, xx-large, x-small, xx-small */
+                font-weight: bolder; /* 100 ~ 900 (디폴트: 400) */
+                color: darkgreen;
+            }
+            p,
+            span {
+                padding: 20px;
+                border: 1px solid silver;
+                background-color: azure;
+            }
+            .em_font {
+                font-size: 2em;
+            }
+            .em_font span {
+                font-size: 2em; /*4배가 된다*/
+            }
+            .rem_font {
+                background-color: antiquewhite;
+                color: navy;
+                font-size: 2rem;
+            }
+            .rem_font span {
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>글자 또는 텍스트 스타일 - 단위</h1>
+        <h2>기본 (normal)</h2>
+        <p class="em_font">
+            글자크기 ABC (em단위)
+            <span>글자크기 123 (em단위)</span>
+        </p>
+
+        <p class="rem_font">
+            글자크기 ABC (rem단위)
+            <span>글자크기 123 (rem단위)</span>
+        </p>
+    </body>
+</html>
+
+<!-- page12_text.html -->

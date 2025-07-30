@@ -1,0 +1,13 @@
+/* style1024.css */
+#main {
+    margin: 0 auto;
+    border: thick solid black;
+    height: 50vh;
+    padding: 3em;
+}
+@media screen and (min-width: 1024px) {
+    #main {
+        width: 90%;
+        background-color: rgb(120, 180, 230);
+    }
+}

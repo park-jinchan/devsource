@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입 양식</title>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid white;
+            }
+            table {
+                width: 600px;
+                border-collapse: collapse;
+            }
+            th {
+                background-color: skyblue;
+                text-align: left;
+                padding: 10px;
+            }
+            td {
+                padding: 10px;
+            }
+            td.label {
+                background-color: #ffffcc; /* 연노랑 */
+                width: 150px;
+            }
+            .hint {
+                color: blue;
+                font-size: 0.9em;
+            }
+            button {
+                margin-left: 5px;
+            }
+            .center {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <table border="1" border-color>
+                <tr>
+                    <th colspan="2">☞ 아이디(ID)정보</th>
+                </tr>
+                <tr>
+                    <td class="label">* 아이디</td>
+                    <td>
+                        <input type="text" name="userid" />
+                        <button type="button">중복검사</button><br />
+                        <span class="hint">(4~12자 영문, 숫자 가능. 한글, 특수문자 사용 불가)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">* 비밀번호</td>
+                    <td>
+                        <input type="password" name="password" />
+                        <span class="hint">(4~8자 이내로 만들어 주세요)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">* 비밀번호 확인</td>
+                    <td>
+                        <input type="password" name="confirm_password" />
+                        <span class="hint">(위 번호와 같이 입력해주세요)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">☞ 개인정보</th>
+                </tr>
+                <tr>
+                    <td class="label">* 이름(한글)</td>
+                    <td>
+                        <input type="text" name="name" />
+                        <span class="hint">(예: 박정현)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">생년월일</td>
+                    <td><input type="date" name="birthdate" /> <input type="radio" name="calendar" /></td>
+                </tr>
+                <tr>
+                    <td class="label">* 주소</td>
+                    <td>
+                        <input type="text" /> <button type="button">우편번호 찾기</button><br />
+                        <input type="text" style="width: 400px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">전화번호</td>
+                    <td>
+                        <span style="color: purple; font-size: 0.8em">핸드폰</span>
+                        <input type="text" size="20" /><input type="radio" name="carrier" value="SKT" /> SKT
+                        <input type="radio" name="carrier" value="KT" /> KT
+                        <input type="radio" name="carrier" value="LGT" /> LGT
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">이메일</td>
+                    <td><input type="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <td class="label">가입인사</td>
+                    <td><textarea name="intro" rows="5" cols="40"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="center">
+                        <button type="submit">확인</button>
+                        <button type="reset">다시입력</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

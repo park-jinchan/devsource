@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page32_transition.html</title>
+        <style>
+            .bar {
+                width: 300px;
+                background-color: blueviolet;
+                color: #fff;
+                margin: 5px;
+                padding: 2px;
+                /* 전환속성: width, 지속시간: 3초 */
+                transition-property: width;
+                transition-duration: 3s;
+            }
+            .bar:hover {
+                width: 1000px;
+                /* hover 시 폭을 1000px까지 늘리고 각 함수를 적용해보기 */
+            }
+            .bar:nth-child(1) {
+                transition-timing-function: linear;
+            }
+            .bar:nth-child(2) {
+                transition-timing-function: ease;
+            }
+            .bar:nth-child(3) {
+                transition-timing-function: ease-in;
+            }
+            .bar:nth-child(4) {
+                transition-timing-function: ease-out;
+            }
+            .bar:nth-child(5) {
+                transition-timing-function: ease-in-out;
+            }
+            .box {
+                background-color: #e3087e;
+                width: 250px;
+                height: 150px;
+                color: white;
+                text-align: center;
+                line-height: 150px;
+                border-radius: 5px;
+                transition-property: background-color, border-radius, color;
+                transition-duration: 1s;
+                transition-timing-function: linear;
+            }
+            input {
+                border: 1px solid #ccc;
+                padding: 0.5em;
+                background-color: #fff;
+                transition: border-color 0.5s ease, background-color 0.8s linear;
+            }
+            button {
+                padding: 0.5em;
+                margin: 1em;
+                border: none;
+                transition: border 0.3s ease, transform 0.3s linear;
+            }
+            .box:hover {
+                background-color: aqua;
+                border-radius: 50%;
+                color: black;
+            }
+            input:focus {
+                border-color: tomato;
+                background-color: #ccc;
+                outline: none;
+            }
+            button:active {
+                border: 2px solid greenyellow;
+                transform: scale(1.3);
+                /* 30% 확대 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="bar">linear : 일정한 속도</div>
+            <div class="bar">ease : 느리게-빠르게-느리게</div>
+            <div class="bar">ease-in : 느리게-빠르게</div>
+            <div class="bar">ease-out : 빠르게-느리게</div>
+            <div class="bar">ease-in-out : 느리게-빠르게-느리게</div>
+
+            <hr />
+            <div class="box">Transition</div>
+            <hr />
+            <input type="text" id="name" placeholder="Name" />
+            <hr />
+            <button>Click Me</button>
+        </div>
+    </body>
+</html>
+
+<!-- page32_transition.html -->

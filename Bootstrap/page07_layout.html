@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page07_layout.html</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                font-family: sans-serif;
+                text-align: center;
+            }
+
+            header,
+            footer {
+                background-color: #a8c99d;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .content {
+                display: flex;
+                flex: 1;
+            }
+
+            .left,
+            .right {
+                background-color: #c9a390;
+                width: 200px;
+                padding: 20px;
+            }
+
+            .main {
+                flex: 1;
+                padding: 20px;
+                background-color: white;
+                text-align: center;
+            }
+
+            /* 반응형 */
+            @media (max-width: 768px) {
+                .content {
+                    flex-direction: column;
+                }
+
+                .left,
+                .right {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 반응형 웹 레이아웃 갖추기(bootstrap, flex + mediaquery 자유선택) -->
+        <header>header</header>
+
+        <div class="content">
+            <div class="left">Left</div>
+            <div class="main">Main</div>
+            <div class="right">Right</div>
+        </div>
+        <footer>Footer</footer>
+    </body>
+</html>
+
+<!-- page07_layout.html -->

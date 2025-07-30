@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page15_list.html</title>
+        <style>
+            .ul1 li {
+                border: 1px solid green;
+                list-style: none;
+                list-style-type: square;
+                list-style-position: inside; /*outside 디폴트*/
+                padding: 4px;
+            }
+            /* .ul2 li {
+                list-style-image: url('./images/icon2.png');
+                list-style-position: inside;
+            } */
+            /* 가상요소 선택자 이용해서 이미지 크기 조절 */
+            .ul2 {
+                list-style: none;
+                padding-left: 0px;
+            }
+            .ul2 li {
+                position: relative;
+                padding-left: 30px; /* 이미지 공간 확보 */
+                margin: 5px;
+            }
+            li::before {
+                content: '';
+                background-image: url('./images/icon.png');
+                position: absolute;
+                left: 0; /*x좌표*/
+                top: 5px; /*y좌표*/
+                width: 25px;
+                height: 25px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            ol li {
+                border: 1px solid mediumseagreen;
+                list-style-type: upper-roman;
+                /* upper-alpha, lower-alpha : 알파벳 대소문자 
+                   lower-roman
+                */
+            }
+            /* class가 menu > li 에 대해 아래와 같이 설정
+            - 폭: 120px 높이: 25px
+            - 배경색: 알아서
+            - 바깥 여백: 3px
+            - 안쪽 여백: 10px
+            - 목록 말머리 : none
+            - 서체
+            - 글자크가 0.9em
+            - 글자정렬: 중앙에 오도록, 수직: 미들
+             */
+            .menu li {
+                width: 120px;
+                height: 25px;
+                background-color: violet;
+                margin: 3px;
+                padding: 10px;
+                list-style: none;
+                line-height: 25px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 0.9em;
+                text-align: center;
+                float: left;
+            }
+            .menu > li > a {
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>목록 관련 스타일</h1>
+        <ul class="ul1">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+            <li>JavaScript</li>
+        </ul>
+        <hr />
+        <ul class="ul2">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+            <li>JavaScript</li>
+        </ul>
+        <hr />
+        <ol>
+            <li>Oracle</li>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+        </ol>
+        <hr />
+
+        <ul class="menu">
+            <li><a href="http://www.naver.com">jQuery</a></li>
+            <li><a href="http://www.naver.com">React.js</a></li>
+            <li><a href="http://www.naver.com">Node.js</a></li>
+            <li><a href="http://www.naver.com">Spring</a></li>
+        </ul>
+
+        <div class="clear"></div>
+        <hr color="red" size="5" />
+    </body>
+</html>
+
+<!-- page15_list.html -->

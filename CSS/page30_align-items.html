@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page30_align-items.html</title>
+        <style>
+            .container {
+                width: 950px;
+                height: 250px;
+                background-color: #ddd;
+                margin-bottom: 1em;
+                border: 1px solid #000;
+                display: flex;
+                flex-direction: rows;
+                /*
+                디폴트
+                주축의 정렬: justify-content 속성을 이용
+                */
+            }
+            .box {
+                background-color: lawngreen;
+                padding: 4px 45px;
+                margin: 5px;
+            }
+            /* 교차축에 항목(item)을 배치하는 방법
+            align-items: flex-start/flex-end/center/strech(항목을 늘려서 교차축에 가득차게 배치)/baseline(교차축 문자 기준선에 맞춰 배치)
+            */
+            .opt1 {
+                align-items: flex-start;
+            }
+            .opt2 {
+                align-items: flex-end;
+            }
+            .opt3 {
+                align-items: center;
+            }
+            .opt4 {
+                align-items: stretch; /* default */
+            }
+            .opt5 {
+                align-items: baseline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt5">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+    </body>
+</html>
+
+<!-- page30_align-items.html -->

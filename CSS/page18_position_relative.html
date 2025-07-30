@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page18_position.html</title>
+    </head>
+    <style>
+        div,
+        span {
+            background-color: rgb(222, 120, 155);
+            border: 1px solid blue;
+        }
+        .top {
+            position: relative;
+            left: 20px;
+            top: 15px;
+        }
+        .right {
+            position: relative;
+            background-color: aqua;
+            right: 30px;
+            /* 원래 static인 위치에서 오른쪽 → 왼쪽으로 30px 이동 */
+        }
+        .bottom {
+            position: relative;
+            background-color: yellow;
+            bottom: 50px;
+            /* 아래에서 위(양수) 방향/ 아래(음수) 방향
+             */
+        }
+        .left {
+            position: relative;
+            left: 5rem;
+            background-color: gold;
+        }
+    </style>
+    <body>
+        <h1>position - static, [relative], absolute, fixed</h1>
+        <!-- relative: 원래 static인 위치를 기준으로 해서 지정된 좌표만큼 이동
+           -->
+        <span class="top">span1</span>
+        <span class="right">span2</span>
+        <span class="bottom">span3</span>
+        <div class="left">div1</div>
+    </body>
+</html>
+
+<!-- page18_position.html -->

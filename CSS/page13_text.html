@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page13_text.html</title>
+        <style>
+            .box1 {
+                height: 100px;
+                margin: 1em;
+                border: 1px solid silver;
+                font-size: 1.5em;
+                width: 500px;
+                /* padding: 0.5em; */
+                /* 수평정렬: left, right, center, justify */
+                text-align: center;
+                /* 수직정렬: top, bottom, middle */
+                /* vertical-align: middle; div에서는 수직정렬이 적용되지 않음 */
+                line-height: 100px;
+            }
+            .box2 {
+                height: 100px;
+                margin: 1em;
+                border: 1px solid magenta;
+                width: 500px;
+                /* padding: 0.5em; */
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .shadow {
+                text-shadow: 4px 2px 7px goldenrod;
+                /* x   y 번짐정도(blur)  색상 */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>텍스트 스타일</h1>
+        <h2>기본(normal)</h2>
+        <h2 style="text-decoration: overline">윗줄</h2>
+        <h2 style="text-decoration: underline">밑줄</h2>
+        <h2 style="text-decoration: line-through">취소선</h2>
+        <a href="http://www.google.com" style="text-decoration: none; font-size: 2em">하이퍼링크</a>
+        <hr />
+        <h1 class="shadow">안녕 CSS - Text Shadow</h1>
+
+        <div class="box1">텍스트 수평/수직 정렬</div>
+        <div class="box2">텍스트 수평/수직 정렬</div>
+        <hr />
+
+        <table border="1" style="width: 60%; height: 400px; margin: 10px auto">
+            <tr>
+                <td width="50%" style="text-align: right">수평 정렬</td>
+                <td width="50%" style="vertical-align: bottom">수직 정렬</td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    <div style="text-transform: capitalize">abc(첫 글자를 대문자)</div>
+                    <div style="text-transform: uppercase">abc(모두 대문자)</div>
+                    <div style="text-transform: lowercase">abcDEF(모두 소문자)</div>
+                </td>
+                <td width="50%">
+                    문자 간격 <br />
+                    <span style="letter-spacing: 10px">문자간격</span><br />
+                    <span style="word-spacing: 20px">단어 간격</span>
+                </td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br />
+    </body>
+</html>
+
+<!-- page13_text.html -->

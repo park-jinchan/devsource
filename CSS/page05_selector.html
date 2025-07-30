@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page05_selector.html</title>
+        <style>
+            /* 1. 태그 선택자
+            */
+            div,
+            p {
+                color: blue;
+                font-size: 1.2em;
+            }
+            /* 2. 클래스 선택자
+            */
+            .cls1 {
+                color: rgb(128, 0, 0);
+                padding: 0.8em;
+                margin: 1em;
+                background-color: rgb(222, 135, 135);
+            }
+            /* 3. 아이디 선택자
+            */
+            #dv2 {
+                border: 2px dotted;
+                padding: 0.5em;
+                margin: 0.5em;
+            }
+            .cls2 {
+                background-color: lavender;
+            }
+            #p1 {
+                background-color: teal;
+                color: white;
+            }
+            /* 우선순위
+            아이디 선택자 > 클래스 선택자 > 계층 선택자 > 태그 선택자 
+            */
+        </style>
+    </head>
+    <body>
+        <h1>기본선택자 - (태그선택자 / 클래스 선택자 / 아이디 선택자)</h1>
+        <div id="dv1">div#dv1</div>
+        <div id="dv2">div#dv2</div>
+        <div class="cls1">div.cls1</div>
+        <p class="cls1">p.cls1</p>
+        <p class="cls2" id="p1">p#p1 .cls2</p>
+    </body>
+</html>
+
+<!-- page05_selector.html -->

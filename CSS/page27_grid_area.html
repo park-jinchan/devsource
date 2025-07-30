@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page27_grid_area.html</title>
+    </head>
+    <style>
+        .grid-container {
+            width: 70%;
+            margin: auto;
+            background-color: #eee;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas: 'box1 box1 box1' /*한줄에 들어갈 템플릿 영역을 ""로 감싼다*/ 'box2 box3 box3' 'box2 .    box4';
+        }
+        .box1 {
+            background-color: aqua;
+            grid-area: box1;
+        }
+        .box2 {
+            background-color: khaki;
+            grid-area: box2;
+        }
+        .box3 {
+            background-color: orange;
+            grid-area: box3;
+        }
+        .box4 {
+            background-color: lawngreen;
+            grid-area: box4;
+        }
+    </style>
+    <body>
+        <div class="grid-container">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+        </div>
+    </body>
+</html>
+
+<!-- page27_grid_area.html -->

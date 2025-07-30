@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page36_mediaquery.html</title>
+    <style>
+        #main {
+            background-color: bisque;
+            height: 50vh;
+            border: thick solid #000;
+            box-sizing: border-box;
+        }
+        /* mobile first */
+        /* 모바일 320px 이상일 때*/
+        @media screen and (min-width: 320px) {
+            #main {
+                background-color: powderblue;
+                width: 50%;
+            }
+        }
+        /* 테블릿 css */
+        @media screen and (min-width: 760px) {
+            #main{
+                background-color: gold;
+                width: 70%;
+            }
+        }
+        /* PC CSS */
+        @media screen and (min-width: 1024px) {
+            #main {
+                background-color: lavender;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main"><h1>#main</h1></div>
+    <hr>
+    <p>
+        <h3>미디어 쿼리 (media query)</h3>
+        @media [only|not] 미디어 유형 [and 조건]*
+    </p>
+</body>
+</html>
+
+<!-- page36_mediaquery.html -->

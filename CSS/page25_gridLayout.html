@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page25_gridLayout.html</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f8f8;
+                margin: 30px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 4개씩 고정 */
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .gallery {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .gallery-content {
+                padding: 15px;
+            }
+
+            .gallery-title {
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+
+            .gallery-desc {
+                font-size: 0.9em;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Menu-Grid Gallery</h1>
+        <div class="grid-container">
+            <div class="gallery">
+                <img src="./images/1.jpg" alt="아메리카노" />
+                <div class="gallery-content">
+                    <div class="gallery-title">아메리카노</div>
+                    <div class="gallery-desc">진한 에스프레소에 뜨거운 물을 더해 부드럽게 즐기는 기본 커피입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/2.jpg" alt="왕메가사과유자" />
+                <div class="gallery-content">
+                    <div class="gallery-title">왕메가사과유자</div>
+                    <div class="gallery-desc">애플티와 유자청의 상큼달콤한 조화가 특징입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/3.jpg" alt="왕메가카페라떼" />
+                <div class="gallery-content">
+                    <div class="gallery-title">왕메가카페라떼</div>
+                    <div class="gallery-desc">에스프레소와 우유의 조화로 고소한 풍미의 라떼입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/4.jpg" alt="귤 톡톡 젤리스무디" />
+                <div class="gallery-content">
+                    <div class="gallery-title">귤 톡톡 젤리스무디</div>
+                    <div class="gallery-desc">귤 과육과 젤리의 식감이 조화로운 시원한 스무디입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/5.jpg" alt="골드키위주스" />
+                <div class="gallery-content">
+                    <div class="gallery-title">골드키위주스</div>
+                    <div class="gallery-desc">상큼달콤한 골드키위에 밀크씨슬을 더한 건강 주스입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/6.jpg" alt="블루베리요거트스무디" />
+                <div class="gallery-content">
+                    <div class="gallery-title">블루베리요거트스무디</div>
+                    <div class="gallery-desc">블루베리와 요거트가 어우러진 새콤달콤한 스무디입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/7.jpg" alt="블루베리플럼주스" />
+                <div class="gallery-content">
+                    <div class="gallery-title">블루베리플럼주스</div>
+                    <div class="gallery-desc">블루베리와 플럼의 건강한 블렌딩 주스입니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <img src="./images/8.jpg" alt="헛개리카노" />
+                <div class="gallery-content">
+                    <div class="gallery-title">(HOT) 헛개리카노</div>
+                    <div class="gallery-desc">국내산 헛개수와 아메리카노의 고소한 조화입니다.</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page07_selector.html</title>
+        <style>
+            /* div의 자식 p중에서 첫번째 자식요소를 선택해서 배경색 주세요 */
+            div > p:first-child {
+                background-color: antiquewhite;
+            }
+            /* 마지막 자식요소 선택 배경색 */
+            div > p:last-child {
+                background-color: violet;
+            }
+            p:nth-child(1) {
+                border: 2px dotted teal;
+            }
+            /* 2번째 자식p를 선택해서 배경색 알아서
+             */
+            p:nth-child(4) {
+                background-color: lavender;
+            }
+            /* 홀수번째 자식들 선택해서 테두리: thick dashed 색상 */
+            p:nth-child(2n + 1) {
+                border: thick dashed tomato;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>first-child/last-child/nth-child() 활용</h1>
+        <div>
+            <p>first-child/last-child/nth-child() 활용</p>
+            <p>first-child/last-child/nth-child() 활용</p>
+            <p>first-child/last-child/nth-child() 활용</p>
+            <p>first-child/last-child/nth-child() 활용</p>
+            <p>first-child/last-child/nth-child() 활용</p>
+        </div>
+    </body>
+</html>
+
+<!-- page07_selector.html -->

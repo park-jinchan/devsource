@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page29_justify-content.html</title>
+        <style>
+            .container {
+                width: 950px;
+                background-color: #ddd;
+                margin-bottom: 1em;
+                border: 1px solid #000;
+                display: flex;
+                flex-direction: row;
+                /* 디폴트
+                주축의 정렬: justify-content 속성을 이용
+                */
+            }
+            .box {
+                background-color: blueviolet;
+                padding: 4px 45px;
+                margin: 5px;
+            }
+            .opt1 {
+                justify-content: center;
+            }
+            .opt2 {
+                justify-content: flex-start;
+                /* 주축의 시작점에 배치 */
+            }
+            .opt3 {
+                justify-content: flex-end;
+                /* 주축의 끝점에 배치 */
+            }
+            .opt4 {
+                justify-content: space-between;
+            }
+            .opt5 {
+                justify-content: space-around;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt5">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+    </body>
+</html>
+
+<!-- page29_justify-content.html -->

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page08_table.html</title>
+    </head>
+    <body>
+        <h1>table태그</h1>
+        <!-- 3행 2열 테이블 -->
+        <table border="1" width="400" height="150">
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+            <tr>
+                <td>Jan</td>
+                <td>100000원</td>
+            </tr>
+            <tr>
+                <td>Feb</td>
+                <td>200000원</td>
+            </tr>
+        </table>
+
+        <hr color="red" />
+
+        <!-- 3행 4열 테이블을 만드세요
+             폭: 80% 높이: 200px
+             1행테이블제목 : <thead>태그로 감싸서
+                번호 이름 연락처 주소 
+                2행~3행 : <tbody>태그로 감싸서
+                    
+                    -->
+        <h2>친구 연락처</h2>
+        <table
+            border="1"
+            width="80%"
+            height="200"
+            align="center"
+            bgcolor="#00ff00"
+            bordercolor="blue"
+            cellspacing="10"
+            cellpading="20"
+            background="images/sky.jpg"
+        >
+            <thead>
+                <tr bgcolor="navy" style="color: white">
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>연락처</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td bgcolor="orange">1</td>
+                    <td bgcolor="lightblue">김</td>
+                    <td bgcolor="images/bird.jpg">010-1111-1111</td>
+                    <td>서울</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>앤</td>
+                    <td>010-2222-2222</td>
+                    <td>경기</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>장</td>
+                    <td>010-3333-3333</td>
+                    <td>대구</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr color="Green" />
+        <h2>col, colgroup 활용</h2>
+        <table width="400px" border="1">
+            <!-- thead, tbody보다 먼저 colgroup을 기술 -->
+            <colgroup>
+                <col span="1" width="20%" style="background-color: lavender" />
+                <!-- <col span="1" style="background-color: rgb(250, 230, 248)" /> -->
+                <col span="2" style="background-color: rgb(230, 250, 247)" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>도시</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>홍길동</td>
+                    <td>22</td>
+                    <td>서울</td>
+                </tr>
+                <tr>
+                    <td>김철수</td>
+                    <td>23</td>
+                    <td>안동</td>
+                </tr>
+            </tbody>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </body>
+</html>

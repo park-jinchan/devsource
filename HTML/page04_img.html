@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>page04_img.html</title>
+    </head>
+    <body>
+        <h1>이미지 태그 -img (inline요소)</h1>
+        <img src="images/lion.jpg" alt="사자 이미지" width="200" height="200" />
+        <!-- 상대경로 : 실행중인 html파일이 있는 경로를 기준으로 파일을 찾는 방식 -->
+        <img src="./images/dog.jpg" width="200" />
+        <!-- . : 현재 디렉토리
+            .. : 현재 디렉토리의 한 단계 위 (상위 디렉토리)
+           ../../ : 2단계 상위 디렉토리에서 파일을 찾는다 -->
+
+        <img src="http://127.0.0.1:5500/images/sea.jpg" width="50%" />
+        <img src="https://ssl.pstatic.net/melona/libs/1539/1539216/0bba7915fd9480b511b7_20250723102400204.jpg" />
+        <hr color="red" />
+        <!-- 절대경로: 서버의 루트 디렉토리에서 시작하여 파일의 경로를 전체적으로 지정하는 방식 -->
+        <img src="/images/river.jpg" width="200" />
+        <br />
+        <figure>
+            <img src="/images/snow.jpg" width="30%" />
+            <figcaption>경치가 좋다</figcaption>
+        </figure>
+    </body>
+</html>

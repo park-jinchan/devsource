@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>HTML5에 추가된 입력 양식</h1>
+        <form action="join.jsp" method="get">
+            <fieldset>
+                <legend>:::회원 가입:::</legend>
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email"
+                multiple placeholder="이메일 양식에 맞게 입력하세요"/><br><br>
+                <!-- multiple속성을 추가하면 콤마(,)이용해서 여러 이메일 입력 가능 -->
+                <br/><br/>
+
+                홈페이지:
+                <input type="url" name="homepage" id="homepage" placeholder="URL형식" />
+                <br/><br/>
+                연락처:
+                <input type="tel" name="tel" id="tel" />
+                <!-- 연락처 형태가 아니어도 에러출력은 하지 않는다
+                 다만 모바일 기기에서 tel타입으로 지정하면 숫자 패드가 나타난다
+                  -->
+                <br/><br/>
+                생년월일:
+                <input type="date" name="birth" id="birth" />
+                시분초:
+                <input type="time" name="birthtime" id="birthtime" />
+                <br><br>
+                나이:
+                <input type="number" name="age" id="age" min="1" max="100">
+                <br/><br/>
+
+                검색어:
+                <input type="search" name="keyword" id="keyword" />
+                <br/><br/>
+                RGB범위
+                <input type="range" name="rgb" id="rgb" min="0" max="255" value="30" />
+                <input type="color" name="cr" id="cr" value="#1144aa" />
+                <br/><br/>
+                포장여부:
+                <input type="text" name="item" id="item" list="pack">
+                <datalist id="pack">
+                    <option value="package">선물 포장</option>
+                    <option value="no_package">선물 포장 안함</option>
+                </datalist>
+                <br/><br/>
+
+                <button>회원가입</button>
+                <input type="image" src="/images/icon.png"
+                 style="width: 100px" height="50px" />
+                 <!-- image타입 버튼은 submit기능을 갖는다 -->
+                  <img src="images/icon.png" onclick="location.href='/join.jsp'" />
+                  <img src="images/icon2.png" onclick="alert('bye bye~~')" />
+            </fieldset>
+    </body>
+</html>
+
+<!-- page15_formControl.html -->
