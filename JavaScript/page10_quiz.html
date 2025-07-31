@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>page10_quiz.html</title>
+    </head>
+    <body>
+        <h1>적정 체중 구하기</h1>
+        <div id="normalWeight"></div>
+        <div id="result"></div>
+
+        <script>
+            const height = Number(prompt('당신의 키는 몇 cm입니까?'));
+            const weight = Number(prompt('당신의 현재 몸무게는 몇 kg입니까?'));
+            const normal = (height - 100) * 0.9;
+
+            let msg = '';
+            let color = '';
+
+            if (weight > normal) {
+                msg = '과체중';
+                color = 'red';
+            } else if (weight < normal) {
+                msg = '체중 미달';
+                color = 'green';
+            } else {
+                msg = '적당해요';
+                color = 'blue';
+            }
+
+            document.getElementById('normalWeight').innerHTML = `적정 체중 ${normal.toFixed(0)}`;
+
+            const result = document.getElementById('result');
+            result.innerHTML = `키: ${height} 몸무게: ${weight} ${msg}`;
+            result.style.color = color;
+            result.style.fontWeight = 'bold';
+            result.style.fontSize = '1.2em';
+        </script>
+    </body>
+</html>
+
+<!-- page10_quiz.html -->

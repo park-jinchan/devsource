@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page07_quiz.html</title>
+        <style>
+            /* input요소 중 readonly속성을 갖는 요소에 배경색 #ccc 주세요 글자색: red */
+            input[readonly] {
+                background-color: #ccc;
+                border: 1px solid silver;
+                padding: 4px;
+                color: red;
+            }
+            label {
+                display: inline-block;
+                width: 120px;
+                /* background: yellow; */
+                text-align: center;
+            }
+            input {
+                padding: 4px;
+            }
+            h1 {
+                text-align: center;
+            }
+            fieldset {
+                width: 80%;
+                margin: auto;
+            }
+            /* pc */
+            @media screen and (min-width: 1024px) {
+                fieldset {
+                    width: 40%;
+                    margin: auto;
+                }
+            }
+        </style>
+        <script>
+            function getGrade() {
+                //1. 사용자가 입력한 국,영,수 값 구하기
+                // form이름.input이름.value로 값 얻기
+                //window.document.frm.kor.value
+                let kor = frm.kor.value; //getter
+                let eng = frm.eng.value;
+                let math = frm.math.value;
+                //alert(kor);
+
+                //2. 점수를 입력하지 않았다면 alert('국어 점수 입력하세요')==> 유효성 체크
+                if (!kor) {
+                    alert('국어 점수 입력하세요');
+                    frm.kor.focus(); //입력 포커스 주기
+                    return;
+                }
+                if (!eng) {
+                    alert('영어 점수 입력하세요');
+                    frm.eng.focus();
+                    return;
+                }
+                if (!math) {
+                    alert('수학 점수 입력하세요');
+                    frm.math.focus();
+                    return;
+                }
+                // alert(typeof kor);
+                //3. 합계 점수, 평균 점수 구해서 출력
+                //숫자로된 문자열==> 정수로 변환해주는 함수: parseInt(문자열),parseFloat(문자열), Number(문자열)
+
+                // let total = kor + eng + math; //string +string+string =>문자열 결합
+                let total = parseInt(kor) + parseInt(eng) + parseInt(math); //정수들의 덧셈
+                let average = total / 3;
+                frm.sum.value = total; //setter
+                frm.avg.value = average.toFixed(2);
+                //숫자.toFixed(2) => 소수점 이하 2자리까지
+            }
+        </script>
+    </head>
+    <body>
+        <h1>성적 구하기</h1>
+        <form name="frm">
+            <fieldset>
+                <legend>성적 입력</legend>
+                <label for="">국어</label>
+                <input type="text" name="kor" /><br /><br />
+
+                <label for="">영어</label>
+                <input type="text" name="eng" /><br /><br />
+
+                <label for="">수학</label>
+                <input type="text" name="math" /><br /><br />
+                <div>
+                    <button type="button" onclick="getGrade()">성적 내기</button>
+                    <button type="reset">다시 쓰기</button>
+                </div>
+                <hr />
+                <label for="">합 계: </label>
+                <input type="text" name="sum" readonly /><br /><br />
+                <label for="">평 균: </label>
+                <input type="text" name="avg" readonly /><br /><br />
+            </fieldset>
+        </form>
+    </body>
+</html>
+<!-- page07_quiz.html -->

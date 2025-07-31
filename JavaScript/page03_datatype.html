@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page03_datatype.html</title>
+    </head>
+    <body>
+        <h1>자바스크립트 자료형</h1>
+        <h2>기본자료형 : number, boolean, string, undefined</h2>
+        <h2>참조형 : object, function</h2>
+
+        <script>
+            // 변수 선언: var, let (변수), const (상수)
+            var a1; // undefined
+            window.document.write('a1=' + a1, '<br>');
+            // 초기화
+            a1 = 10.12; //number (정수, 실수)
+            document.write('a1=' + a1, '<br>');
+            document.write('a1의 타입: ', typeof a1, '<br>');
+            a1 = 'Hello'; // 값을 할당할 때 타입이 정해진다. string
+            document.write('a1=' + a1, '<br>');
+            document.write('a1의 타입: ', typeof a1, '<br>');
+
+            let b = true; // boolean (true, false)
+            let b2 = 2 > 3;
+            document.write(b + ' ', typeof b, '<br>');
+            document.write(b2 + ' ', typeof b2, '<br>');
+            //참조형
+            let nothing = null; // 아무것도 아닌 값
+            document.write(nothing, ' ', typeof nothing, '<br>');
+
+            let car = new Object(); //객체 유형
+            // 객체 (속성+행동양식)
+            car.color = 'black';
+            car.capacity = 2000;
+        </script>
+    </body>
+</html>
+
+<!-- page03_datatype.html -->
