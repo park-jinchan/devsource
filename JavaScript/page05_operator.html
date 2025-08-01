@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page05_operator.html</title>
+    </head>
+    <body>
+        <h1>자바스크립트 연산자</h1>
+        <script>
+            // 1. 산술 연산자
+            let x = 10,
+                y = 20;
+            document.write(x + y, '<br>');
+            document.write(x - y, '<br>');
+            document.write(x * y, '<br>');
+            document.write(x / 3, '<br>'); //몫을 구함
+            document.write(x % 3, '<br>'); //나머지값을 구함
+        </script>
+        <hr color="red" />
+
+        <script>
+            // 2. 비교 연산자(관계 연산자)
+            // ==,===, !=, >, >=, <,<=
+            let a = 10,
+                b = 5,
+                c = 10.0;
+            document.write(a == b, '<br>'); //false
+            document.write(a != b, '<br>'); // true값이 다를 경우 true를 반환
+            document.write(a != c, '<br>'); //false
+
+            document.write(a === b, '<br>'); //false
+            document.write(a == '10', '<br>'); //true
+            document.write(a === '10', '<br>'); //false
+            // === : 값과 자료형이 같아야 true 반환
+            document.write(a === c, '<br>'); //true
+        </script>
+        <hr />
+        <script>
+            document.write(a >= b, '<br>');
+            document.write(a <= b, '<br>');
+            //문자열도 비교함
+            document.write('A' == '65', '<br>'); //false
+            document.write('A' > '1', '<br>'); //true
+            //아스키코드값으로 변환하여 크기를 비교
+        </script>
+        <hr color="blue" />
+        <script>
+            document.write('abc' == false, '<br>'); //false
+            document.write('' == false, '<br>'); //true
+            document.write(0 == false, '<br>'); //true
+            document.write(10 == false, '<br>'); //false
+            document.write(undefined == undefined, '<br>');
+        </script>
+    </body>
+</html>
+<!-- page05_operator.html -->

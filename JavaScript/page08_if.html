@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page08_if.html</title>
+    </head>
+    <body>
+        <h1>제어문 - if문</h1>
+        <!-- 
+            if, if ~ else, if ~ else if ... else (다중 if문)
+
+            if(조건식){
+                실행문;
+            }
+                조건식이 true이면 실행문을 실행한다
+        -->
+
+        <script>
+            const num = window.prompt('점수를 입력하세요');
+            document.write(num, ' ', typeof num);
+            //취소 버튼=> null값이 들어옴
+            //입력값이 없을 경우 alert() 숫자 입력해요
+            if (num == null) {
+                alert('숫자를 입력해야 해요');
+                window.location.reload(); //새로고침
+            }
+            // 입력한 점수 값이 60점 이상이면 <h1>합격</h1> 파랑색으로 출력
+            // 그 미만이면 <h1>실패</h1> 빨강색으로 출력하세요
+            let result,
+                cr = 'black';
+            if (Number(num) >= 60) {
+                result = '합격';
+                cr = 'blue';
+            } else {
+                result = '실패';
+                cr = 'red';
+            }
+
+            document.write(`<h1 style="color:${cr}">${result}</h1>`);
+        </script>
+    </body>
+</html>
+<!-- page08_if.html -->

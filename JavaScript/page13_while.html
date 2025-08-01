@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page13_while.html</title>
+        <style>
+            .table {
+                border-collapse: collapse;
+                width: 80%;
+                margin: auto;
+            }
+            .table th {
+                background-color: chartreuse;
+            }
+            .table td {
+                text-align: center;
+                padding: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>제어문 - while loop</h1>
+        <!-- 
+            변수선언 및 초기화식
+            while(조건식){
+                실행문;
+                증감식;
+            }
+         -->
+        <script>
+            let index = 1;
+            while (index < 6) {
+                document.write(`<h3>JavaScript ${index}</h3>`);
+                index++;
+            }
+            document.write('<hr>');
+            //[1] prompt로 구구단 몇단을 할까요?
+            //입력을 하면 table형태로 구구단을 출력
+            const num = 7; //parseInt(prompt('구구단 몇단을 할까요?'));
+            let i = 1,
+                str = '<table border="1">';
+            if (!num) {
+                alert('숫자를 제대로 입력하세요');
+                location.reload();
+            }
+            while (i <= 9) {
+                str += `<tr><td>${num} * ${i} = ${num * i}</td></tr>`;
+                i++;
+            }
+            str += '</table>';
+            document.write(str);
+        </script>
+        <hr />
+        <script>
+            // [2] 구구단 전체를 테이블 형태로 출력하세요
+            //중첩 while루프 사용하세요
+            let a = 1;
+            str = `<table border="1" class="table">`;
+            str += `<tr>`;
+            for (let dan = 2; dan < 10; dan++) {
+                str += `<th>${dan} 단</th>`;
+            }
+            str += `</tr>`;
+            while (a < 10) {
+                let b = 2;
+                str += '<tr>';
+                while (b < 10) {
+                    str += `<td>${b} x ${a} = ${a * b}</td>`;
+
+                    b++;
+                }
+                a++;
+                str += '</tr>';
+            }
+            str += `</table>`;
+            document.write(str);
+        </script>
+    </body>
+</html>
+<!-- page13_while.html -->

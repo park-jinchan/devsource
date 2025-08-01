@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page12_for.html</title>
+    </head>
+    <body>
+        <h1>중첩 for 루프</h1>
+        <!-- 3행 5열
+        ★★★★★<br>
+        ★★★★★<br>
+        ★★★★★<br>
+         -->
+        <script>
+            for (let j = 0; j < 3; j++) {
+                //행의 조건
+                for (let i = 0; i < 5; i++) {
+                    //열의 조건
+                    document.write('★');
+                } //for---
+                document.write('<br>');
+            } //for-------
+            document.write('<hr>');
+            //3행2열
+            for (let a = 0; a < 3; a++) {
+                for (let b = 0; b < 2; b++) {
+                    document.write(`(${a}, ${b})`);
+                }
+                document.write('<br>');
+            }
+        </script>
+        <hr />
+        <script>
+            // 중첩 for루프 이용해서 5행 5열 table을 만들어 출력하세요
+            // 셀안에 ★ 를 출력하세요
+            let str = '<table border="1" style="width:300px;height:300px">';
+            for (let i = 1; i < 6; i++) {
+                //행의 조건
+                str += '<tr>';
+                for (let k = 1; k < 6; k++) {
+                    str += `<td>(${i}, ${k})</td>`;
+                } //for
+                str += '</tr>';
+            } //for-----------------
+
+            str += '</table>';
+            document.write(str);
+        </script>
+        <hr />
+        <script>
+            str = '<table border="1" style="width:200px;height:200px;">';
+            for (i = 0; i < 5; i++) {
+                str += '<tr>';
+                for (j = 0; j < 5; j++) {
+                    i + j >= 4 ? (str += '<td>★</td>') : (str += '<td> </td>');
+                }
+                str += '</tr>';
+            }
+            str += '</table>';
+            document.write(str);
+        </script>
+    </body>
+</html>
+<!-- page12_for.html -->

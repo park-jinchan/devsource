@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page06_operator.html</title>
+    </head>
+    <body>
+        <h1>연산자</h1>
+        <script>
+            //3. 증감 연산자 (++, --)
+            let a = 5;
+            a++; // a= a+1  1씩 증가
+            document.write(`a=${a}`, '<br>'); //6
+            ++a;
+            document.write(`a=${a}`, '<br>'); //7
+
+            let b = 10;
+            b--; //b=b-1;
+            document.write(`b=${b}`, '<br>'); //9
+            --b;
+            document.write(`b=${b}`, '<br>'); //8
+            //증감 연산자가 단독으로 사용될 때는 변수 앞에오나 뒤에오나 상관없음
+            //다른 연산자와 함께 사용하면 전위이냐 후위이냐에 따라 차이가 있다
+            let m = 10;
+            let n = m++; //후위 연산자
+            //m의 값을 n에 먼저 대입한 뒤에 m의 값을 1 증가시킨다
+            document.write(`m=${m}, n=${n}<br>`); //m=11, n=10
+            let x = 10;
+            let y = ++x; //전위 연산자
+            //x의 값을 1 먼저 증가시킨 뒤, 그 값을 y에 대입함
+            document.write(`x=${x}, y=${y}<br>`);
+        </script>
+        <hr color="red" />
+        <script>
+            //4. 논리 연산자 (&&, ||)
+            //and연산자 : && => 피 연산자가 모두 true일 경우에만 true
+            //or 연산자 : || => 둘 중 하나라도 true이면 true
+            document.write(3 < 6 && 4 < 8, '<br>');
+            document.write(3 > 6 && 4 < 8, '<br>');
+            //앞 연산결과가 false이면 뒤의 연산을 수행하지 않음
+
+            document.write(3 < 6 || 4 < 8, '<br>'); //true
+            //앞 연산결과가 true이면 뒤의 연산을 수행하지 않음
+
+            document.write(3 > 6 || 4 < 8, '<br>'); //true
+
+            if (3 > 6 || 4 < 8) {
+                document.write('***********');
+            }
+
+            // 5. 논리 부정 연산자 (!)
+            //true ==> false로, false==> true
+            let bool = 3 < 6; //true
+            if (!bool) {
+                document.write('<h3>####</h3>');
+            }
+
+            let inputName = ''; //'도민준'; //undefined
+            if (!inputName) {
+                //alert('이름을 입력하세요');
+            } else {
+                alert(inputName + '님 환영합니다~');
+            }
+        </script>
+        <hr color="BLUE" />
+        <script>
+            //6. 3항 연산자
+            /*  변수 선언문 = (조건식)? 값1: 값2;
+            조건식이 true면 변수에 값1을 대합하고, false면 값2를 대입한다
+             */
+            inputName = '김영희';
+            let msg = !inputName ? '이름을 입력해야 해요!!' : inputName + '님 환영해요~';
+            document.write(`<h1>${msg}</h1>`);
+        </script>
+        <hr color="green" />
+        <script>
+            //7. 연산후 할당(대입) 연산자 (+=, -=, *=, /=, %=)
+            let i = 50; //i++
+            document.write(`<h3>i=${i}</h3>`);
+            i += 3; // i= i+3
+            document.write(`<h3>i=${i}</h3>`); //53
+            i -= 7; //i=i-7;
+            document.write(`<h3>i=${i}</h3>`); //46
+            i *= 2; // i=i*2
+            document.write(`<h3>i=${i}</h3>`); //92
+            i /= 4; //i=i/4
+            document.write(`<h3>i=${i}</h3>`); //23
+            i %= 10; // i=i%10
+            document.write(`<h3>i=${i}</h3>`); //3
+        </script>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </body>
+</html>
+<!-- page06_operator.html -->

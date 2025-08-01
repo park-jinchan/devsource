@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page18_setInterval.html</title>
+        <style>
+            #parent {
+                width: 800px;
+                height: 300px;
+                position: relative;
+            }
+            #circle {
+                width: 100px;
+                height: 100px;
+                background-color: mediumturquoise;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>window객체의 setTimeout()/clearTimeout()</h1>
+
+        <hr />
+        <h1>window객체의 setInterval()/clearInterval()</h1>
+        <hr />
+        <div id="parent">
+            <div id="circle"></div>
+        </div>
+        <hr />
+        <button onclick="show()">Click Me- 3초 뒤에 꽝!</button>
+        <button onclick="show2()">Click Me2-주기적으로 꽝!</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="stop2()">Stop2</button>
+        <button onclick="moveCircle()">Move Circle</button>
+        <button onclick="stopCircle()">Stop Circle</button>
+        <script>
+            let wid = null;
+            let wid2 = null;
+            function show() {
+                // window.setTimeout(함수,밀리초): 밀리초 이후에 함수가 1번 실행된다
+                wid = setTimeout(function () {
+                    alert('꽝!!');
+                }, 3000);
+            } //-------------
+            function stop() {
+                if (wid != null) {
+                    clearTimeout(wid);
+                }
+            }
+
+            const show2 = function () {
+                wid2 = setInterval(() => {
+                    //화살표 함수(ES6)
+                    alert('꽝꽝꽝!!!');
+                }, 3000);
+            }; //----------------
+            const stop2 = function () {
+                if (wid2 != null) clearInterval(wid2);
+            }; //------------------------
+
+            let x = 0;
+            let wid3 = null;
+            function moveCircle() {
+                let circle = document.querySelector('#circle');
+                //circle.style.left = '300px';
+                if (wid3 == null) {
+                    wid3 = setInterval(() => {
+                        x += 5;
+                        circle.style.left = x + 'px';
+                    }, 50);
+                    // console.log(wid3);
+                } //if---------
+            }
+            function stopCircle() {
+                console.log(wid3);
+
+                if (wid3 != null) {
+                    clearInterval(wid3);
+                    wid3 = null;
+                }
+            }
+        </script>
+    </body>
+</html>
+
+<!-- page18_setInterval.html -->

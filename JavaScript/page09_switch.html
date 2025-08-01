@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page09_switch</title>
+    </head>
+    <body>
+        <h1>제어문 - switch ~ case문</h1>
+        <!-- 
+            switch(변수 or 수식){
+                case 값1: 실행문; break;
+                case 값2: 실행문; bre2ak;
+                case 값3: 실행문; break;
+                ...
+                default: 실행문
+            }
+         -->
+        <script>
+            // 4계절 중 하나를  입력 받아 해당 계절의 영어 문자열을 출력
+            //document.body.bgcolor=색상
+            //봄: pink 여름: skyblue 가을: maroon 겨울: white
+            const season = prompt('현재 계절을 입력하세요', '여름');
+            if (!season) {
+                location.reload();
+            }
+            let result,
+                cr = 'white';
+            switch (season) {
+                case '봄':
+                    result = 'Spring';
+                    cr = 'pink';
+                    break;
+                case '여름':
+                    result = 'Summer';
+                    cr = 'skyblue';
+                    break;
+                case '가을':
+                    result = 'Fall';
+                    cr = 'maroon';
+                    break;
+                case '겨울':
+                    cr = 'white';
+                    result = 'Winter';
+                    break;
+                default:
+                    result = '그런 계절은 없습니다';
+            }
+            document.write(`<h1>${season} => ${result}</h1>`);
+            //html 요소들의 css 속성값을 JS를 이용해서 적용하려면
+            //background-color:yellow
+            //html요소.style.backgroundColor='yellow'
+            document.body.style.backgroundColor = cr; //camel표기법
+        </script>
+    </body>
+</html>
+<!-- page09_switch.html -->

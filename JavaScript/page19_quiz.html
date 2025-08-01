@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>배열 응용</title>
+        <style>
+            body {
+                margin: 0;
+                background: #f5f5f5;
+                font-family: ui-sans-serif, system-ui, 'Malgun Gothic', Arial;
+            }
+
+            .toolbar {
+                padding: 10px;
+            }
+
+            #demo {
+                padding: 6px 10px;
+                color: #222;
+                white-space: pre-line;
+                min-height: 24px;
+            }
+
+            #divider {
+                height: 1px;
+                background: #d7d7d7;
+                margin: 8px 0;
+            }
+
+            #posterContainer {
+                position: fixed;
+                left: 0;
+                display: flex;
+                gap: 10px;
+            }
+            .poster {
+                width: 150px;
+                height: 220px;
+                object-fit: cover;
+                background: #eee;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="toolbar">
+            <button id="bt1">Click Me</button>
+            <button id="bt2">현재 상영작 보기</button>
+            <button id="btMove">Move</button>
+            <button id="btStop">Stop</button>
+        </div>
+
+        <div id="demo"></div>
+        <div id="divider"></div>
+
+        <script>
+            const arr = ['images/111.jpg', 'images/222.jpg', 'images/333.jpg', 'images/444.jpg', 'images/555.jpg'];
+
+            const demo = document.getElementById('demo');
+            const divider = document.getElementById('divider');
+
+            let container = null;
+            let intervalId = null;
+            let pos = 0;
+            let dir = 1;
+
+            function setContainerTop() {
+                if (!container) return;
+                const rect = divider.getBoundingClientRect();
+                const top = rect.bottom + 16 + window.scrollY;
+                container.style.top = `${top}px`;
+            }
+
+            function createContainer() {
+                if (container) container.remove();
+
+                container = document.createElement('div');
+                container.id = 'posterContainer';
+
+                arr.forEach((src) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.className = 'poster';
+                    container.appendChild(img);
+                });
+
+                document.body.appendChild(container);
+                pos = 0;
+                dir = 1;
+                container.style.left = pos + 'px';
+                setContainerTop();
+            }
+
+            document.getElementById('bt1').addEventListener('click', () => {
+                demo.textContent = arr.join('\n');
+            });
+
+            document.getElementById('bt2').addEventListener('click', () => {
+                demo.textContent = '';
+                createContainer();
+            });
+
+            document.getElementById('btMove').addEventListener('click', () => {
+                if (!container || intervalId !== null) return;
+
+                intervalId = setInterval(() => {
+                    const screenW = window.innerWidth;
+                    const contW = container.offsetWidth;
+
+                    pos += dir * 2;
+                    container.style.left = pos + 'px';
+
+                    if (pos + contW >= screenW) dir = -1;
+                    if (pos <= 0) dir = 1;
+                }, 16);
+            });
+
+            document.getElementById('btStop').addEventListener('click', () => {
+                clearInterval(intervalId);
+                intervalId = null;
+            });
+
+            window.addEventListener('resize', setContainerTop);
+            window.addEventListener('scroll', setContainerTop);
+        </script>
+    </body>
+</html>

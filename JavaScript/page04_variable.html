@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page04_variable.html</title>
+    </head>
+    <body>
+        <h1>변수 - variable, field, property: var, let, const</h1>
+        <script>
+            var name = '홍길동'; //전역변수
+            document.write(name, '<br>');
+
+            //함수 정의
+            function foo() {
+                var age = 22; //지역변수 => foo()함수 내부에서만 사용 가능
+                num = 100; //var를 생략하면 전역변수가 된다
+                document.write('foo()안에서 name: ', name, '<br>');
+                document.write('foo()안에서 age: ', age, '세<br>');
+                document.write('foo()안에서 num: ', num, '<br>');
+            }
+            //함수 호출
+            foo();
+            //document.write(age, '<br>'); [x] 에러. 지역변수이므로
+            document.write('<h3>', num, '</h3>'); //[o] 전역변수
+
+            //let, const ==> block level scope를 갖는다. (ES6 이후 권장)
+            let x = 200; //전역변수. 동일한 블럭 내에서 재선언 불가능
+            var y = 300;
+            document.write(x, ' ', y, '<br>');
+            var y = 'Hi'; //재선언 가능
+            //let x = 'Hello'; //에러 [x] 재 선언 불가능
+            x = 'Hello'; //재할당
+            document.write(x, ' ', y, '<br>');
+
+            const pi = 3.14; //재할당 불가능. 상수
+            document.write(pi, '<br>');
+            //pi = 5.45; //[x] error
+            document.write(pi, '<br>');
+
+            let bar = function () {
+                document.write('bar()함수...<br>');
+            };
+            bar();
+            const baz = function () {
+                document.write('baz()함수...<br>');
+            };
+            baz();
+
+            //문자열 + 변수 ==> 문자열 결합
+            document.write(10 + pi); //숫자 +숫자 => 덧셈
+            document.write('<br>' + 10 + pi); //문자열+숫자=>문자열 결합
+
+            document.write('pi값: ' + pi);
+            // ` : 백틱
+            document.write(`<h1>pi값: ${pi} </h1>`);
+
+            document.write('<h1>pi값: ${pi} </h1>');
+        </script>
+    </body>
+</html>
+<!-- page04_variable.html -->
