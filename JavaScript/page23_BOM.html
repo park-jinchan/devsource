@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page23_BOM.html</title>
+    </head>
+    <body>
+        <h1>브라우저 내장객체 - (Browser Object Model)</h1>
+        <p>Window document, location, history</p>
+        <button onclick="openWin()">팝업창 열시</button>
+        <button onclick="closeWin()">팝업창 닫기</button>
+        <button onclick="moveWin()">팝업창 위치 변경</button>
+        <button onclick="resizeWin()">팝업창 크기 변경</button>
+        <button onclick="openDialig()">확인창 띄우기</button>
+        <hr />
+        <button onclick="location.reload()">새로고침(location.reload())</button>
+        <hr />
+        <a href="page24.html">page24.html로 이동</a>
+        <script>
+            const openWin = () => {
+                let win = null;
+                // 변수=window.open(url, "창이름", "속성들") : 새창 열기
+                const url = 'page01.html';
+                // const url = 'http://www.google.com';
+                win = open(url, 'popup', 'width=300, height=400, left=50, top=100, resizable=no');
+            };
+
+            const coloseWin = () => {
+                if (win != null) {
+                    win.close(); //window.colose()
+                    win = null;
+                }
+            };
+
+            const moveWin = () => {
+                // window.moveTo(x,y)
+                // 300,300 이동
+                if (win != null) win.moveTo(300, 300);
+            };
+
+            const resizeWin = () => {
+                // window.resizeTo(w,h)
+                if (win != null) win.resizeTo(400, 150);
+            };
+
+            const openDialog = () => {
+                // window.alert(str) : 알람창
+                // prompt(str) : 입력창
+                // confirm(str) : 확인창
+                const yn = window.confirm('구글로 이동할까요?');
+                // 확인버튼=>true, 최소버튼=>false
+                if (yn) {
+                    window.location.href = 'http://www.google.com';
+                }
+            };
+        </script>
+    </body>
+</html>
+
+<!-- page23_BOM.html -->

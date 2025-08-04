@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page22_array</title>
+    </head>
+    <body>
+        <h1>배열 함수</h1>
+        <script>
+            /*
+            [1] map(콜백함수)
+            - 새배열 = 배열.map(함수)
+            - 배열의 각 요소에 대해 지정된 콜백함수를 실행하고 그 결과 새로운 배열로 반환함
+            - 원본 배열은 불변성을 유지, 새배열을 반환            
+            */
+            let users = [
+                { name: 'Tom', score: 90 },
+                { name: 'Alice', score: 80 },
+                { name: 'John', score: 66 },
+                { name: 'Bob', score: 72 },
+            ];
+            let str = `<ul>`;
+            const mapUsers = users.map(function (obj, i) {
+                return `<li id="user${i}">이름: ${obj.name}, 성적: ${obj.score}점</li>`;
+            });
+            //str += mapUsers; [x]
+            str += mapUsers.join(''); // 배열요소들을 문자열로 만들어서 누적
+            str += `</ul>`;
+
+            console.log(Array.isArray(mapUsers));
+            console.log(mapUsers);
+            document.write(str);
+            console.log(users);
+            /*[2] 새배열 = 배열.filter(콜백함수)
+            - 배열의 각 요소를 필터링하여 조건에 맞는 요소만 새배열에 담아서 반환한다
+            - true를 반환하는 요소만 새배열에 포함된다
+            // users에서 70점 이상 점수를 받은 학생 정보를 출력
+             */
+            let success = users.filter((obj) => {
+                if (obj.score >= 70) return true;
+                return false;
+            });
+
+            printArr(success);
+
+            function printArr(array) {
+                for (let v of array) {
+                    document.write(v.name + ',' + v.score + '<br>');
+                }
+                document.write('<hr>');
+            }
+            /*[3] 배열.find(콜백함수): 배열에 주어진 조건을 만족하는 첫번째 요소를 반환
+              [4] 배열.findIndex(콜백함수): 배열에 주어진 조건을 만족하는 첫번째 요소의 인덱스를 반환  
+            */
+            //    users에서 Alice라는 이름을 가진 학생정보를 출력
+            let person = users.find((obj, i) => obj.name == 'Alice');
+            printArr([person]);
+            document.write(person);
+            /*
+            [5] 배열.some(콜백함수) : 조건을 하나라도 만족하면 true반환
+            [6] 배열.every(콜백함수): 조건을 모두 만족하면 treu반환
+            */
+            //100점
+            let exists = users.some((obj) => obj.score == 100);
+            document.write(`<h3>만점자가 있나요? ${exists}</h3>`);
+
+            //모두 60점 이상인가요?
+            exists = users.every((obj) => obj.score >= 60);
+            document.write(`<h3>모두 60점 이상인가요? ${exists}</h3>`);
+
+            // [7] 변수 =배열.reduce(콜백함수, 초기값)
+            //모든 학생의 합계 점수 구하세요
+            const sum = users.reduce((prev, obj) => {
+                console.log('prev: ', prev);
+                return prev + obj.score;
+            }, 0);
+            document.write(`<h3>합계점수: ${sum} </h3>`);
+        </script>
+    </body>
+</html>
+<!--page22_array  -->

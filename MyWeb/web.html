@@ -10,19 +10,21 @@
             body {
                 font-family: 'Noto Sans KR', sans-serif;
             }
+
             .team-logos img {
                 height: 32px;
                 margin: 0 5px;
             }
+
             .banner {
-                height: 500px; /* 전체 배너 높이 줄이기 */
+                height: 500px;
                 overflow: hidden;
             }
 
             .banner img {
-                height: 500px; /* 이미지 높이 고정 */
-                width: 100%; /* 너비는 꽉 채우기 */
-                object-fit: cover; /* 이미지 비율 유지하며 잘 맞추기 */
+                height: 500px;
+                width: 100%;
+                object-fit: cover;
             }
 
             .carousel-caption {
@@ -32,13 +34,29 @@
                 padding: 20px;
                 border-radius: 10px;
             }
-            .news img,
+
             .highlights img {
                 width: 100%;
                 border-radius: 5px;
+                height: 200px;
+                object-fit: cover;
             }
+
+            .card-img-top {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
             .game-result li {
                 font-weight: 500;
+            }
+            .match-logo {
+                height: 32px;
+                width: 32px;
+                object-fit: cover;
+                border-radius: 5px;
             }
         </style>
     </head>
@@ -80,6 +98,8 @@
             <img src="/MyWeb/images/김천.png" alt="김천" />
             <img src="/MyWeb/images/대구.png" alt="대구" />
             <img src="/MyWeb/images/대전.png" alt="대전" />
+            <img src="/MyWeb/images/제주.png" alt="제주" />
+            <img src="/MyWeb/images/안양.png" alt="안양" />
         </div>
 
         <!-- 메인 배너 캐러셀 -->
@@ -118,43 +138,139 @@
                 <div
                     class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center h-100"
                 >
-                    <h1 class="fw-bold text-white mb-3">공식 그레이딩 파트너</h1>
-                    <p class="text-white mb-4">K리그 카드의 가치를 높여주는 국내 유일 그레이딩 기업 brg와 함께!</p>
-                    <a href="#" class="btn btn-outline-light">그레이딩이 뭔가요?</a>
+                    <h1 class="fw-bold text-white mb-3">경일대학교_박진찬</h1>
+                    <p class="text-white mb-4">안녕하세요 웹페이지 실습입니다.</p>
+                    <a href="#" class="btn btn-outline-light">눌러주세요</a>
                 </div>
             </div>
         </section>
 
-        <!-- 경기 결과 -->
+        <!-- 최근 경기 결과 + 뉴스 (2열 구성) -->
         <section class="container my-5">
-            <h3 class="mb-4">최근 경기 결과</h3>
-            <ul class="list-group game-result">
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>2025.08.02 울산 2 : 3 수원FC</span>
-                    <span class="badge bg-danger">경기종료</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>2025.07.27 강원 2 : 2 울산</span>
-                    <span class="badge bg-secondary">무승부</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>2025.07.26 대전 0 : 1 서울</span>
-                    <span class="badge bg-danger">경기종료</span>
-                </li>
-            </ul>
-        </section>
+            <div class="row">
+                <!-- 왼쪽: 경기 결과 카드 -->
+                <div class="col-md-6">
+                    <h3 class="mb-4">최근 경기 결과</h3>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-3 text-nowrap text-secondary small">2025.08.02</span>
+                                        <img src="/MyWeb/images/울산.png" class="match-logo me-2" />
+                                        <span class="me-2">울산</span>
+                                        <span class="fw-bold me-2">2 : 3</span>
+                                        <span class="me-2">수원FC</span>
+                                        <img src="/MyWeb/images/수원FC.png" class="match-logo ms-2" />
+                                    </div>
+                                    <span class="badge bg-danger">경기종료</span>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- 뉴스 -->
-        <section class="container news mb-5">
-            <h3 class="mb-4">뉴스</h3>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <img src="/images/river.jpg" alt="뉴스 이미지" />
-                    <h5 class="mt-2">[충북청주] 안산 원정에서 수적 열세 극복</h5>
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-3 text-nowrap text-secondary small">2025.07.27</span>
+                                        <img src="/MyWeb/images/강원.png" class="match-logo me-2" />
+                                        <span class="me-2">강원</span>
+                                        <span class="fw-bold me-2">2 : 2</span>
+                                        <span class="me-2">울산</span>
+                                        <img src="/MyWeb/images/울산.png" class="match-logo ms-2" />
+                                    </div>
+                                    <span class="badge bg-secondary">무승부</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-3 text-nowrap text-secondary small">2025.07.27</span>
+                                        <img src="/MyWeb/images/대구.png" class="match-logo me-2" />
+                                        <span class="me-2">대구</span>
+                                        <span class="fw-bold me-2">0 : 1</span>
+                                        <span class="me-2">포항</span>
+                                        <img src="/MyWeb/images/포항.png" class="match-logo ms-2" />
+                                    </div>
+                                    <span class="badge bg-danger">경기종료</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-3 text-nowrap text-secondary small">2025.07.26</span>
+                                        <img src="/MyWeb/images/대전.png" class="match-logo me-2" />
+                                        <span class="me-2">대전</span>
+                                        <span class="fw-bold me-2">0 : 1</span>
+                                        <span class="me-2">서울</span>
+                                        <img src="/MyWeb/images/서울.png" class="match-logo ms-2" />
+                                    </div>
+                                    <span class="badge bg-danger">경기종료</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-3 text-nowrap text-secondary small">2025.07.26</span>
+                                        <img src="/MyWeb/images/김천.png" class="match-logo me-2" />
+                                        <span class="me-2">김천</span>
+                                        <span class="fw-bold me-2">3 : 1</span>
+                                        <span class="me-2">제주</span>
+                                        <img src="/MyWeb/images/제주.png" class="match-logo ms-2" />
+                                    </div>
+                                    <span class="badge bg-danger">경기종료</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-3 text-nowrap text-secondary small">2025.07.26</span>
+                                        <img src="/MyWeb/images/광주.png" class="match-logo me-2" />
+                                        <span class="me-2">광주</span>
+                                        <span class="fw-bold me-2">1 : 2</span>
+                                        <span class="me-2">전북</span>
+                                        <img src="/MyWeb/images/전북.png" class="match-logo ms-2" />
+                                    </div>
+                                    <span class="badge bg-danger">경기종료</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 오른쪽: 뉴스 -->
                 <div class="col-md-6">
-                    <img src="/images/sky.jpg" alt="뉴스 이미지" />
-                    <h5 class="mt-2">[전남] 충남아산과 2-2 무승부</h5>
+                    <h3 class="mb-4">뉴스</h3>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <img src="/images/river.jpg" class="card-img-top" alt="뉴스 이미지" />
+                                <div class="card-body">
+                                    <h5 class="card-title">[충북청주] 안산 원정에서 수적 열세 극복</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <img src="/images/sky.jpg" class="card-img-top" alt="뉴스 이미지" />
+                                <div class="card-body">
+                                    <h5 class="card-title">[전남] 충남아산과 2-2 무승부</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

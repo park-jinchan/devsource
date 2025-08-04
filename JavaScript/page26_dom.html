@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function init() {
+                //const b1 = document.getElementById('b1');
+                //alert(b1);
+                const btns = document.getElementsByTagName('button');
+                //alert(btns); //HTMLCollection
+
+                btns[0].addEventListener('click', () => {
+                    //alert('hi');
+                    //li 엘리먼트 생성
+                    const newLi = document.createElement('li');
+                    //const txtNode=document.createTextNode('React.js')
+                    //React.js라는 텍스트 설정
+                    newLi.textContent = 'React.js';
+                    newLi.style.color = 'purple';
+                    newLi.style.fontSize = '1.3em';
+                    //<li>React.js</li>
+                    //#list 선택해서 여기에 붙이기
+                    const ul = document.querySelector('#list'); //부모노드
+                    ul.appendChild(newLi);
+                }); //----------------------------------
+                //요소.onclick=function(){}
+                btns[1].onclick = () => {
+                    //#list의 마지막요소(lastElementChild)의 바로 앞에 붙이기
+                    //부모노드.insertBefore(새노드, 참조노드)
+                    const newLi = document.createElement('li');
+                    const txtNode = document.createTextNode('Node.js');
+                    newLi.append(txtNode);
+                    newLi.style.color = 'blue';
+                    newLi.style['font-size'] = '1.3em';
+                    newLi.style.fontWeight = 'bold';
+
+                    const ul = document.querySelector('#list');
+                    const lastEl = ul.lastElementChild;
+                    ul.insertBefore(newLi, lastEl);
+                };
+                btns[2].onclick = () => {
+                    //#list2의 자식 img를 선택해서 src와 alt 속성값을 추가하세요
+                    const img = document.querySelector('#list2>img');
+                    //img.src = 'images/coffee1.jpg';
+                    //img.alt = '커피1';
+                    //img.width='200px'
+                    img.setAttribute('src', 'https://picsum.photos/200/200');
+                    img.setAttribute('alt', '랜덤 이미지');
+                };
+                btns[3].onclick = () => {
+                    //img의 src,alt속성 삭제하세요 removeAttribute('속성명')
+                    const img = document.querySelector('#list2>img');
+                    img.removeAttribute('src');
+                    img.remove('alt');
+                };
+            } //init()-------------------
+            //window.onload = init;
+            document.addEventListener('DOMContentLoaded', init);
+        </script>
+    </head>
+    <body>
+        <h1>DOM - Document Object Model</h1>
+        <hr />
+        <button id="b1">#list 마지막에 React.js추가하기</button>
+        <button id="b2">#list 중간에 Node.js추가하기</button>
+        <button id="b3">#list2 img 속성값 변경하기</button>
+        <button id="b4">#list2 img 속성값 삭제하기</button>
+        <hr />
+        <ul id="list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <div id="list2">
+            <img />
+        </div>
+    </body>
+</html>
+<!-- page26_dom.html -->

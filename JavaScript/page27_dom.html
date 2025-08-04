@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page27_dom.html</title>
+        <style>
+            .mycss {
+                padding: 10px;
+                border: none;
+            }
+            .selected {
+                background-color: dodgerblue;
+                color: yellow;
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM - 삭제</h1>
+        <ul id="menu">
+            <li>HTML <button onclick="removeItem(this)">Delete</button></li>
+            <li class="css">CSS <button>Delete</button></li>
+            <li id="js">JavaScript <button>Delete</button></li>
+            <li>jQuery <button>Delete</button></li>
+        </ul>
+        <hr />
+        <button class="mycss">class추가</button>
+        <button class="mycss">class삭제</button>
+        <button class="mycss">class토글</button>
+        <script>
+            const removeItem = (btn) => {
+                // alert(btn);
+                //부모 노드를 찾는다 (parentElement, parentNode)
+                const li = btn.parentElement; //삭제할 요소 li
+                //alert(li);
+                const parent = li.parentNode; //부모노드 ul
+
+                //부모.removeChild(삭제할요소)
+                parent.removeChild(li);
+            };
+
+            const btns = document.querySelectorAll('button');
+            //alert(btns);//NodeList
+            // for (let i = 0; i < btns.length; i++) {
+            //     btns[i].addEventListener('click', function () {
+            //         //익명함수로 이벤트 핸들러 구성
+            //         //alert(this); //this는 클릭한 버튼
+            //         //alert(this.parentElement.textContent);
+            //         const li = this.parentElement;
+            //         //const ul = li.parentNode;
+            //         //ul.removeChild(li);
+            //         li.remove(); //최근api
+            //     });
+            // }
+
+            //화살표 함수로 이벤트 핸들러를 구성할 때  this는 무엇인가?
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].addEventListener('click', (evt) => {
+                    //alert(this); //화살표 함수에서 this는 => 전역객체(window)
+                    //evt=> event객체
+                    //alert(evt.target); //화살표 함수에서는 this대신 event.target을 이용하자
+                    evt.target.style.backgroundColor = 'tomato';
+                    evt.target.parentNode.remove();
+                });
+            }
+
+            const buttons = document.getElementsByClassName('mycss');
+            //alert(buttons);//HTMLCollection
+            buttons[0].onclick = () => {};
+        </script>
+    </body>
+</html>
+<!-- page27_dom.html -->

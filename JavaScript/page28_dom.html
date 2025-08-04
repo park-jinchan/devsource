@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page27_dom.html</title>
+        <style>
+            .mycss {
+                padding: 10px;
+                border: none;
+            }
+            .selected {
+                background-color: dodgerblue;
+                color: yellow;
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM - 클래스 추가/삭제</h1>
+        <hr />
+        <button class="mycss">class추가</button>
+        <button class="mycss">class삭제</button>
+        <button class="mycss">class토글</button>
+        <script>
+            const buttons = document.getElementsByClassName('mycss');
+            //alert(buttons);//HTMLCollection
+            buttons[0].onclick = (e) => {
+                //e.target.setAttribute('class', 'mycss selected');
+                e.target.classList.add('selected');
+            };
+            buttons[1].onclick = (e) => {
+                e.target.classList.remove('mycss');
+            };
+            buttons[2].onclick = (e) => {
+                e.target.classList.toggle('selected');
+            };
+        </script>
+    </body>
+</html>
+<!-- page27_dom.html -->
