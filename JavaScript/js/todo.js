@@ -1,69 +1,51 @@
-// js/todo.js
+function init() {
+    const input = document.getElementById('todoInput');
+    const btnAdd = document.querySelector('#btnAdd');
+    const todoList = document.querySelector('#todoList');
 
-window.onload = function () {
-    const btnAdd = document.getElementById('btnAdd');
-    const todoInput = document.getElementById('todoInput');
-    const todoList = document.getElementById('todoList');
-
-    btnAdd.onclick = function () {
-        const todoText = todoInput.value.trim();
-        if (todoText === '') {
-            alert('할 일을 입력하세요!');
+    const addToDo = () => {
+        //사용자가 입력한 값 얻기
+        let todoText = input.value.trim(); //앞뒤의 공백문자 제거
+        //유효성 체크
+        if (!todoText) {
+            alert('할 일을 입력하세요');
+            input.focus();
             return;
         }
+        //DOM생성
+        const liItem = document.createElement('li');
+        liItem.setAttribute('class', 'item');
+        liItem.innerHTML = `<label>${todoText}
+        <input type='checkbox'>
+        </label>`;
 
-        // 새로운 li 요소 생성
-        const li = document.createElement('li');
-        li.className = 'item';
+        const btn = document.createElement('button');
+        btn.textContent = '삭 제';
+        liItem.append(btn); //버튼 부착
+        todoList.append(liItem);
+        //append() : 뒤에 붙이기
+        //prepend(): 앞에 붙이기
+        input.value = '';
+        input.focus();
 
-        const label = document.createElement('label');
-        label.innerText = todoText;
-
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-
-        // ✅ 체크 시 취소선 클래스 추가
-        checkbox.addEventListener('change', function () {
-            if (this.checked) {
-                label.classList.add('checked');
-            } else {
-                label.classList.remove('checked');
-            }
+        //삭제 버튼 이벤트 처리
+        btn.addEventListener('click', (e) => {
+            e.target.parentNode.remove();
         });
-
-        label.appendChild(checkbox);
-
-        const delBtn = document.createElement('button');
-        delBtn.innerText = '삭 제';
-        delBtn.onclick = function () {
-            todoList.removeChild(li);
-        };
-
-        li.appendChild(label);
-        li.appendChild(delBtn);
-        todoList.appendChild(li);
-
-        // 입력창 초기화
-        todoInput.value = '';
     };
 
-    // 기존 항목들에도 삭제 및 체크 이벤트 추가
-    const existingItems = document.querySelectorAll('#todoList .item');
-    existingItems.forEach((item) => {
-        const button = item.querySelector('button');
-        const checkbox = item.querySelector('input[type="checkbox"]');
-        const label = item.querySelector('label');
-
-        button.onclick = function () {
-            todoList.removeChild(item);
-        };
-
-        checkbox.addEventListener('change', function () {
-            if (this.checked) {
-                label.classList.add('checked');
-            } else {
-                label.classList.remove('checked');
-            }
-        });
+    //버튼 이벤트 처리
+    btnAdd.addEventListener('click', addToDo);
+    input.addEventListener('keydown', (evt) => {
+        // console.log(evt.keyCode, evt.key);
+        if (evt.key == 'Enter') {
+            addToDo();
+        }
     });
-};
+    todoList.addEventListener('change', (evt) => {
+        //alert(evt.target);//input checkbox
+        evt.target.parentNode.classList.toggle('complete');
+    });
+} //init()---------------
+
+document.addEventListener('DOMContentLoaded', init);

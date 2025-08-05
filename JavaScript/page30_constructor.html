@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page30_constructor.js</title>
+    </head>
+    <body>
+        <h1>생성자 함수를 이용한 객체 생성</h1>
+        <script>
+            // 객체 생성 방법
+            //[1] Object를 이용하는 방법 let car=new Object(); car.color='red'
+            //[2] literal방식  let car={color:'black', capa:2000}
+            //[3] 생성자 함수를 이용하는 방식 => 생성자 함수를 구성해야 함
+            //[4] class로 구성해서 사용하는 방식
+            //객체= 속성(특징) + 행동양식 ===> 변수 + 메서드
+            //학생: 학번,이름,국어,영어 => 속성 (field,attribute,property)
+            //      성적을 구하자 => 행동양식(함수, function, method)
+
+            //생성자 함수=> 함수명을 대문자로 시작
+            function Student(no, name, kor, eng) {
+                //no,name,... => 매개변수(argument, parameter)
+                console.log(this); // Student {}  자기 자신의 객체를 의미
+                console.log(no, name);
+                this.no = no; //this.no ==> 객체의 속성 (인스턴스 변수) ==> Student{no:1}
+                this.name = name; //==> Student{no:1, name:'홍길동'}
+                this.kor = kor;
+                this.eng = eng;
+                console.log(this);
+
+                this.toString = function () {
+                    return `학번: ${this.no}<br>이름: ${this.name}<br>국어: ${this.kor}<br>영어: ${this.eng}<hr>`;
+                };
+                this.getSum = function () {
+                    return this.kor + this.eng;
+                };
+                this.getAvg = function () {
+                    return this.getSum() / 2;
+                };
+            }
+
+            let st1 = new Student(1, '홍길동', 97, 100);
+            //생성자 함수를 호출할 때는 new 연산자를 같이 사용함
+            document.write(`<h3>${st1.name}, 국어: ${st1.kor}</h3>`);
+            document.write(st1.toString());
+
+            //합계점수를 반환하는 함수를 구성하세요 : getSum()
+            //평균점수를   : getAvg()
+
+            //학생 객체 2개 생성하세요
+            //각 학생의 정보 출력후 합계점수,평균점수도 출력하세요
+            const st2 = new Student(2, '이철수', 75, 88);
+            const st3 = new Student(3, '최수지', 81, 65);
+
+            document.write(st2.toString());
+            document.write(st2.getSum(), '<br>');
+            document.write(st2.getAvg(), '<hr color="red">');
+
+            document.write(st3.toString());
+            document.write(st3.getSum(), '<br>');
+            document.write(st3.getAvg(), '<hr color="red">');
+
+            /* 생성자 함수 내에 메서드(함수)를 구성하면
+               객체가 메모리에 올라갈 때마다 해당 메서드도 같이 올라간다
+
+               객체들끼리 메서드를 공유하는 방법 => prototype을 사용하는 방법
+            */
+            function Teacher(name, subject) {
+                this.name = name;
+                this.subject = subject;
+            }
+            Teacher.prototype.toString = function () {
+                return `교사 이름: ${this.name}<br>담당 과목: ${this.subject}<hr>`;
+            };
+
+            const t1 = new Teacher('김교사', '국어');
+            const t2 = new Teacher('최교사', '영어');
+            document.write(t1.toString());
+            document.write(t2.toString());
+            //객체들마다 함수를 공유하는 형태가 된다
+            //함수를 객체마다 새로만들지 않고 한 번만 정의되며 t1,t2가 공유해서 사용한다
+            //각 객체는 __proto__ 체인을 따라 함수를 찾아가는 형태
+        </script>
+    </body>
+</html>
+<!-- // page30_constructor.html -->

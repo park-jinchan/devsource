@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page31_class.html</title>
+    </head>
+    <body>
+        <h1>class로 객체를 구성하는 방법/ 객체 사용하는 방법</h1>
+        <h2>ES6 이후에 나옴. 그 이전에는 생성자 함수를 사용</h2>
+        <script>
+            //객체를 만들어내는 일종의 틀, 설계도
+            class Person {
+                //생성자
+                constructor(id, name) {
+                    console.log(this); //this = {}
+                    this.id = id;
+                    this.name = name;
+                }
+                //인스턴스 메서드 ==> 객체명.메서드명()
+                toString() {
+                    return `ID: ${this.id}<br>Name: ${this.name}<hr>`;
+                }
+
+                //static 메서드(클래스 메서드) => 클래스명.메서드명() => 객체간에 공유함
+                static commonMethod() {
+                    return `대한민국`;
+                }
+            }
+
+            //객체 생성
+            const p1 = new Person(100, '김사랑');
+            const p2 = new Person(200, '정수민');
+            document.write(p1.name, p1.id, '<br>');
+            document.write(p2.name, p2.id, '<br>');
+            // toString()호출하기
+            document.write(p1.toString());
+            document.write(p2.toString());
+
+            // commonMethod()호출하기
+            //document.write(p1.commonMethod());=> error 발생. 클래스명으로 접근해야 함
+            document.write(Person.commonMethod(), '<br>');
+
+            //상속 (inheritance) => "is a" 관계가 성립해야 함
+            //Student is a Person, Teacher is a Person[o], Staff is a Machine [x]
+            //상속받을 때 사용하는 키워드: extends
+
+            class Student extends Person {
+                constructor(id, name, score) {
+                    super(id, name); //super() => 부모(Person)생성자를 호출해서 초기화를 수행함
+                    // this.id = id;
+                    // this.name = name;
+                    this.score = score;
+                }
+                //Person으로부터 toString(), commonMethod도 상속받아 가지고 있음
+                //=> [1] 그대로 사용 [2] 재정의해서 사용 (override)
+                toString() {
+                    //재정의
+                    //id,name,score
+                    return `<h3>학생정보</h3><p>${super.toString()} Score: ${this.score}점</p>`;
+                    //super : 부모를 참조하는 키워드. super() =>부모 생성자 super.변수=>부모로부터 상속받은 속성
+                    //          super.메서드() ==> 부모로부터 상속받은 메서드 호출
+                    //          super.toString() => ID,Name
+                    //          this.toString() => ID, Name, Score
+                }
+                toString2(title) {
+                    return `${title}<br>${this.toString()}`;
+                }
+            }
+            const s1 = new Student(1, '이상현', 77);
+            const s2 = new Student(2, '유현미', 88);
+            document.write(s1.id, s1.name, s1.score, '<hr>');
+            document.write(s2.toString());
+            document.write(Student.commonMethod());
+            document.write(s1.toString());
+            document.write(s1.toString2('@@@@@@@'));
+        </script>
+    </body>
+</html>
+<!-- page31_class.html -->

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page32_class.html</title>
+    </head>
+    <body>
+        <h1>class 구성시 멤버변수 캡슐화</h1>
+        <!-- 객체지향 언어(OOP언어) 4가지 주요 특징
+            1. 추상화
+            2. 캡슐화
+            3. 상속성
+            4. 다형성 (메서드 override)
+         -->
+        <script>
+            class Person {
+                constructor(name, age) {
+                    this.name = name; //캡슐화가 되지 않은 데이터
+                    this.age = age;
+                }
+                show() {
+                    document.write(`<h3>${this.name}: ${this.age}세</h3>`);
+                }
+            }
+            const p1 = new Person('홍길동', 22);
+            p1.show();
+
+            p1.name = '김수정';
+            p1.age = 33;
+            p1.show();
+
+            class Student {
+                #name; //private field => 캡슐화 => 같은 클래스 내부에서만 접근 가능하다.
+                // setter/getter 메서드를 구성해서 메서드를 통해 접근하게 한다
+                constructor(name, age) {
+                    this.#name = name;
+                    this.age = age;
+                    // console.log(this.#name);
+                }
+
+                getName() {
+                    //getter
+                    return this.#name;
+                }
+                setName(name) {
+                    //setter
+                    this.#name = name;
+                }
+            }
+
+            const s1 = new Student('김경호', 25);
+            document.write(s1.age, '세<br>');
+            // document.write(s1.#name); //접근 에러 (외부에서 접근 불가)
+            document.write(s1.getName(), '<br>');
+            // s1.#name = '김철수'; //[x]
+            s1.setName('김철수');
+            document.write(s1.getName(), '<br>');
+        </script>
+    </body>
+</html>
+<!-- page32_class.html -->
