@@ -1,9 +1,9 @@
 {
     "data": {
-        "id": 0,
+        "id": 10,
         "email": "string@naver.com",
         "first_name": "Alice",
         "last_name": "Kim",
-        "avatar": "images/dog.jpg"
+        "avatar": "images/dog3.jpg"
     }
 }

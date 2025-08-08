@@ -44,9 +44,13 @@ function init() {
         //한경닷컴 서버로 직접 요청을 보내보자. ==> 에러 발생 (sop 정책때문)
         //same orign policy (동일 출처 정책) : 같은 서버 내에서만 통신 가능
         //cors 정책 (cross origin resource sharing)에 의해 차단됨
-        const res = await axios.get(url); //xml형태로 응답
-        alert(res);
-        //showNews(res);
+        try {
+            const res = await axios.get(url); //xml형태로 응답
+            alert(res);
+            //showNews(res);
+        } catch (error) {
+            alert(error);
+        }
     }; //--------------------
 
     b4.onclick = async () => {
