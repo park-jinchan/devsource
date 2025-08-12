@@ -8,32 +8,45 @@ import MyComp2 from './components/MyComp2';
 import PageNotFound from './components/PageNotFound';
 import Side from './components/Side';
 import UseEffectHook from './components/UseEffectHook';
+import TimerClock from './components/TimerClock';
+import UserDetail from './components/UserDetail';
+
+// ✅ TodoApp 추가 (경로는 네가 둔 위치에 맞게)
+import TodoApp from './components/todo/TodoApp';
+
+// ⚠️ Boards가 없다면 임시로 주석 처리하거나 컴포넌트를 만들어줘
+// import Boards from './components/Boards';
 
 function App() {
     return (
         <div>
             <BrowserRouter>
-                {/* BrowserRouter로 앱 전체를 감싸야 라우팅 기능을 사용할 수 있다
-                  SPA에서 URL경로에 따라 다른 컴포넌트를 보여주는 기능을 함
-                */}
                 <Container>
                     <Row>
                         <Col>
                             <Header />
                         </Col>
                     </Row>
+
                     <Row>
                         <Col xs={12} sm={3} md={4} lg={4} className="d-none d-sm-block">
-                            {/* d-none: 모두 안보이게 한 뒤 d-sm-block=> small사이즈부터 보여준다 */}
                             <Side />
                         </Col>
+
                         <Col xs={12} sm={9} md={8} lg={8}>
                             <Routes>
                                 <Route path="/" element={<Home />} />
-                                {/* Route: 특정 url에 대해 렌더링할 컴포넌트를 정의(매핑) */}
                                 <Route path="/comp1" element={<MyComp1 />} />
                                 <Route path="/comp2" element={<MyComp2 />} />
                                 <Route path="/hook1" element={<UseEffectHook />} />
+                                <Route path="/hook2" element={<TimerClock />} />
+                                <Route path="/users/:id" element={<UserDetail />} />
+
+                                {/* ✅ Todo 라우트 추가 */}
+                                <Route path="/todos" element={<TodoApp />} />
+
+                                {/* <Route path="/boards" element={<Boards />} /> */}
+
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>
