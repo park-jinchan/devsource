@@ -1,43 +1,28 @@
-.todo-item {
+/* TodoListItem.css */
+.TodoListItem {
     display: flex;
+    margin: 1.5em auto;
+    padding: 1.1em;
+    /* justify-content: space-around; */
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 6px;
-    border-bottom: 1px solid #f3f4f6;
-    gap: 10px;
+    gap: 1.5em;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.3rem;
 }
-.todo-item__left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.TodoListItem .chkbox {
+    width: 20px;
+}
+.TodoListItem .content {
     flex: 1;
 }
-.todo-item__checkbox {
-    width: 16px;
-    height: 16px;
-}
-.todo-item__text {
-    font-size: 15px;
-}
-.todo-item__text.is-done {
+.TodoListItem .content.done {
     text-decoration: line-through;
-    color: #9ca3af;
+    color: darkgray;
 }
-.todo-item__right {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-.todo-item__date {
-    font-size: 13px;
-    color: #6b7280;
-}
-.todo-item__remove {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 18px;
-}
-.todo-item__remove:hover {
-    transform: scale(1.05);
+/* isDone이 true  className='content done'
+            false className='content'
+*/
+.TodoListItem .wdate {
+    font-size: 0.9rem;
+    color: darkblue;
 }

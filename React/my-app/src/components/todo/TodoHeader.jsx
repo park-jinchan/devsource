@@ -1,15 +1,11 @@
+// TodoHeader.jsx
 import React from 'react';
 
-function TodoHeader() {
-    const today = new Date();
-    const options = { year: 'numeric', month: 'short', day: 'numeric', weekday: 'short' };
-
+export default function TodoHeader() {
     return (
-        <header className="todo-header">
+        <div className="py-4">
             <h1>오늘 할 일 (To Do List)</h1>
-            <p>{today.toLocaleDateString('en-US', options)}</p>
-        </header>
+            <h2> 📅 {new Date().toLocaleDateString()} </h2>
+        </div>
     );
 }
-
-export default TodoHeader;
