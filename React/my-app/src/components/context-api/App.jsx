@@ -1,7 +1,6 @@
 // App.jsx
-// props drilling
-
-import React, { useState } from 'react';
+//props drilling
+import { useState } from 'react';
 
 export default function App() {
     const [nickName, setNickName] = useState('홍길동');
@@ -11,8 +10,10 @@ export default function App() {
             <div>
                 <h1>상위 부모 App - 상단 메뉴</h1>
             </div>
-            <div>{/* 프로필 컴포넌트 - 컨텐츠 */}</div>
-            <Profile userId={nickName} />
+            <div>
+                {/* 프로필 컴포넌트 - 컨텐츠 */}
+                <Profile userId={nickName} />
+            </div>
             <div>
                 <h3>하단 메뉴</h3>
             </div>

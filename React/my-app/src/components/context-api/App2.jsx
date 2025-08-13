@@ -1,15 +1,14 @@
 // App2.jsx
-// Context API를 사용해보자
-
+//Context API를 사용해보자.
 import { useState, createContext } from 'react';
 /*
-*   createContext()를 호출하면 Context객체를 반환한다
-
+ *  createContext()를 호출하면 Context객체를 반환한다
+    
     변수 = createContext('초기값')
-*   createContext()가 반환하는 값 ==> 객체 => {Provider, Consumer}
+ *  createContext()가 반환하는 값 ==>객체=>{ Provider, Consumer }
     Provider: 데이터 공급자 ==> App 컴포넌트
-*   Consumer: 데이터 소비자 ==> Greeting
-*/
+ *  Consumer: 데이터 소비자 ==> Greeting
+ */
 
 const UserContext = createContext('unknown');
 
