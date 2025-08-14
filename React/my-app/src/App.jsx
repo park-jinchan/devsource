@@ -17,6 +17,9 @@ import TodoApp from './components/todo/TodoApp';
 import UseNavigateHook from './components/UseNavigateHook';
 import UseContextHook from './components/context-api/App3';
 import UserAll from './components/user/UserAll';
+import UseMemoHook from './components/UseMemoHook';
+import Parent1 from './components/usecallback/Parent4';
+import SignUp from './components/member/SignUp';
 
 function App() {
     return (
@@ -40,6 +43,7 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 {/* Route: 특정 url에 대해 렌더링할 컴포넌트를 정의(매핑) */}
+                                <Route path="/signup" element={<SignUp />} />
                                 <Route path="/comp1" element={<MyComp1 />} />
                                 <Route path="/comp2" element={<MyComp2 />} />
                                 <Route path="/hook1" element={<UseEffectHook />} />
@@ -52,6 +56,8 @@ function App() {
                                 <Route path="/todo" element={<TodoApp />} />
                                 <Route path="/hook3" element={<UseNavigateHook />} />
                                 <Route path="/hook4" element={<UseContextHook />} />
+                                <Route path="/hook5" element={<UseMemoHook />} />
+                                <Route path="/hook6" element={<Parent1 />} />
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>
