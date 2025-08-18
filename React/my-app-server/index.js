@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+// npm i express cors
+// cors 설치이유: 리액트와 노드의 포트번호가 다르면 도메인이 다른 것으로 인식되기 때문에 cors 문제가 생김
+// 도메인이 같아야 네트워크 통신을 할 수 있음
 
 const PORT = 7777;
 
