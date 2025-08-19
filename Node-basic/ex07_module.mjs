@@ -1,5 +1,4 @@
 // ex07_module.mjs
-
 /**
  * ES6 모듈 사용 방법
 1. 파일 확장자 변경
@@ -16,7 +15,6 @@ package.json 설정 추가: 프로젝트의 package.json 파일에
 }
 --------------------------
  */
-
 export function printStar(num) {
     for (let i = 0; i < num; i++) {
         console.log('★★★★★');

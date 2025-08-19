@@ -1,5 +1,3 @@
-// area.js
-
 const area = {
     mysquare: function (len) {
         return len * len;

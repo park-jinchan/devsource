@@ -1,4 +1,4 @@
-// index.js
+//index.js
 const calc = require('./calc');
 const area = require('./area');
 const print = require('./print');
