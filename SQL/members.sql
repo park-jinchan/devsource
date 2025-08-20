@@ -1,7 +1,14 @@
 use kbdb;
 show databases;
 show tables;
+-- SQL (Structured Query  Language) 
+-- DDL 문장 (Data Definition Language) : create, drop, alter, truncate 
+-- DML 문장 (Data Manipulation Language) : insert, delete, update, select
+-- DQL 문장 (Data Query  Language) : select문
+-- TCL 문장 (Transaction Control  Language) : commit, rollback
+-- DCL 문장 (Data Control Language) : grant to, revoke from 
 -- 회원 테이블 생성문
+-- drop table if exists members -- 테이블 삭제  
 create table if not exists members(
 	id int primary key auto_increment, -- 회원번호 (PK) 
     name varchar(30) not null, -- 회원명 
@@ -19,7 +26,7 @@ desc members;
 -- values ('값1', '값2',...)
 
 insert into members(name, email, passwd)
-values ('박진찬', 'park@naver.com', '1111');
+values ('박진찬', 'qqq@naver.com', '1111');
 
 commit;
 
@@ -32,3 +39,7 @@ insert into members(name, email, passwd, role)
 values ('김관리', 'admin@master.com', '111', 'ADMIN');
 
 select * from members;
+
+use kbdb;
+
+select *from members;
