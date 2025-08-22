@@ -103,5 +103,7 @@ ROLLBACK;
 
 set @@autocommit=1;  -- 자동으로 auto commit
 
+use kbdb;
 
+select * from members order by id desc;
 

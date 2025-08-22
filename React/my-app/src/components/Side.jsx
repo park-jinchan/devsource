@@ -10,6 +10,10 @@ export default function Side() {
             </Button>
             <hr></hr>
             <ListGroup>
+                <ListGroup.Item as={Link} to="/admin">
+                    전체 회원 목록 (Admin)
+                </ListGroup.Item>
+
                 <ListGroup.Item as={Link} to="/hook1">
                     useEffect훅 (Count)
                 </ListGroup.Item>
@@ -44,6 +48,9 @@ export default function Side() {
                 </ListGroup.Item>
                 <ListGroup.Item as={Link} to="/rest2">
                     REST Api (User All)
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/zustand">
+                    Zustand (Counter)
                 </ListGroup.Item>
             </ListGroup>
         </Stack>

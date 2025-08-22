@@ -20,6 +20,8 @@ import UserAll from './components/user/UserAll';
 import UseMemoHook from './components/UseMemoHook';
 import Parent1 from './components/usecallback/Parent4';
 import SignUp from './components/member/SignUp';
+import UserListAdmin from './components/member/UserListAdmin';
+import Counter from './components/zustand/Counter';
 
 function App() {
     return (
@@ -44,6 +46,7 @@ function App() {
                                 <Route path="/" element={<Home />} />
                                 {/* Route: 특정 url에 대해 렌더링할 컴포넌트를 정의(매핑) */}
                                 <Route path="/signup" element={<SignUp />} />
+                                <Route path="/admin" element={<UserListAdmin />} />
                                 <Route path="/comp1" element={<MyComp1 />} />
                                 <Route path="/comp2" element={<MyComp2 />} />
                                 <Route path="/hook1" element={<UseEffectHook />} />
@@ -58,6 +61,7 @@ function App() {
                                 <Route path="/hook4" element={<UseContextHook />} />
                                 <Route path="/hook5" element={<UseMemoHook />} />
                                 <Route path="/hook6" element={<Parent1 />} />
+                                <Route path="/zustand" element={<Counter />} />
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>

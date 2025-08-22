@@ -16,8 +16,8 @@ export default function Parent1() {
         <div>
             <h2>Parent1 컴포넌트- memo와 useCallback을 사용하여 성능 최적화 </h2>
             <p>
-                Child는 memo로 감싸있었도, handleClick이 매 렌더링될 때 마다 새로운 함수로 생성된다 = 이 함수를 props로
-                Child에 전달하면 = Child는 다시 렌더링 = 이를 해결하기 위해 useCallback훅을 사용해야 한다
+                Child는 memo로 감싸있었도, handleClick이 매 렌더링될 때 마다 새로운 함수로 생성된다 - 이 함수를 props로
+                Child에 전달하면 - Child는 다시 렌더링 - 이를 해결하기 위해 useCallback훅을 사용해야 한다
             </p>
             <p>
                 memo만으로는 함수 props가 전달시 재렌더링을 막을 수 없다. <br></br>
