@@ -1,6 +1,7 @@
 //postApi.js
 import axios from 'axios';
 let baseUrl = `http://localhost:7777/api`;
+import axiosInstance from './axiosInstance';
 
 //---post 글쓰기 (파일업로드 x)---------------
 export const apiCreatePost = async (data) => {
@@ -21,14 +22,33 @@ export const apiCreatePostFileUp = async (data) => {
     });
     return response.data;
 };
-// ---post 목록 가져오기
-export const apiFetchPostList = async () => {
-    const response = await axios.get(`${baseUrl}/posts`);
+//--- post 목록 가져오기 ------------------------------
+export const apiFetchPostList = async (page = 1, size = 3, query = undefined) => {
+    console.log('page=====', page);
+    //alert(page);
+    const response = await axiosInstance.get(`/posts`, { params: { page, size, query } });
+                                    // `/posts?page=${page}&size=${size}&query=${query}`
     return response.data;
 };
-
-// ---post 상세 가져오기---
-export const apiFetchPostById = async (id) => {
-    const response = await axios.get(`${baseUrl}/posts/${id}`);
+//---post 글 삭제하기 ----------------------------------
+export const apiDeletePost = async (id) => {
+    const response = await axiosInstance.delete(`/posts/${id}`);
     return response.data;
+};
+//---post 단건 가져오기 -----------------------------
+export const apiFetchPostById = async (id) => {
+    const response = await axiosInstance.get(`/posts/${id}`);
+    const data = response.data?.data;
+    if (data && data.length > 0) {
+        return data[0];
+    }
+    return null;
+};
+//---post글 수정하기 -----------------------------------
+export const apiUpdatePost = async (id, formData) => {
+    await axiosInstance.put(`/posts/${id}`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+    });
 };
