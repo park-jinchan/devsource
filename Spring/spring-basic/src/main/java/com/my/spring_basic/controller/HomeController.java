@@ -1,8 +1,10 @@
 package com.my.spring_basic.controller;
 
+import com.my.spring_basic.domain.MemberDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 //HomeController ctr=new HomeController()
 //ctr.showHome() ==> 개발자 주도
@@ -25,5 +27,22 @@ public class HomeController {
         //resources/templates/home.html
     }
 
+    @RequestMapping("/test")
+    public String showMessage(Model model){
+        model.addAttribute("msg","Post글쓰기 성공");
+        model.addAttribute("loc","/");
+        
+        return "message";
+    }
+
+    @RequestMapping(value = "/demo1", method = RequestMethod.GET)
+    public String demo1(Model model) {
+        MemberDTO m1 = new MemberDTO(1, "김회원", "kim@a.b.c", "111", "USER", null);
+        MemberDTO m2 = new MemberDTO(2, "송회원", "kim@a.b.c", "111", "USER", null);
+        MemberDTO m3 = new MemberDTO(3, "최회원", "kim@a.b.c", "111", "USER", null);
+
+
+    }
 
 }
+ 
